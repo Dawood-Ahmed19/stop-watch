@@ -4,14 +4,9 @@ const lapButton = document.querySelector("#l-btn")
 const continueButton = document.querySelector("#c-btn")
 const divLaps = document.querySelector(".Laps")
 const Laps = document.querySelector("#laps")
-let lapCounter = 0
+let lapsCounter = 0
 
-let lapsCount = countLaps = () => {
-    lapCounter++
-    Laps.innerText = lapCounter
-}
-
-const countWatch = setInterval(() => {
+let countWatch = setInterval(() => {
     
     if (number.innerText > 0) number.innerText -= 1
     
@@ -30,9 +25,10 @@ stopButton.addEventListener("click", function () {
 })
 
 lapButton.addEventListener("click", function () {
+    lapsCounter += 1
     divLaps.innerHTML += `<div class="lap-container">
     <div class="div-lap">
-        <h2 id="laps">${lapsCount}</h2><span>Laps</span>
+        <h2 id="laps">${lapsCounter}</h2><span>Laps</span>
     </div>
     <div class="div-seconds">
         <h2 id="seconds">${number.innerText}</h2><span>s</span>
